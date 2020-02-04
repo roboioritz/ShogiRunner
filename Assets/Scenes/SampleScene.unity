@@ -34696,7 +34696,7 @@ MonoBehaviour:
   pitch: 0
   PPM: 0
   PPMbase: 45
-  margen: 10
+  margen: 15
   Intime: 0
 --- !u!82 &945935494
 AudioSource:
