@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class AudioSpeedChange : MonoBehaviour
 {
-    public AudioSpeedChange i;
+    static public AudioSpeedChange i;
+
     private AudioSource pista;
+
     public float points;
     public float acceleration;
     public float pitch;
     public float PPM;
-    public float PPMbase;
+    public float PPMbase;    
+    public float margen;
+
+    public bool Intime;
 
     private float tempo;
+    private float pretempo;
+    private float postempo;
+
 
     void Start()
     {
@@ -21,21 +29,41 @@ public class AudioSpeedChange : MonoBehaviour
         pista.Play(0);
         points = 1;
         acceleration = 2f / 3000f;
+        tempo = 0;
+        PPM = PPMbase;
+        pretempo = tempo + (margen / PPM);
+        postempo = tempo - (margen / PPM);
     }
 
     void Update()
     {
         points += 1 * Time.deltaTime;
         tempo += Time.deltaTime;
+        pretempo += Time.deltaTime;
+        postempo += Time.deltaTime;
 
         pitch = 1 + (points * acceleration);
         PPM = pitch * PPMbase;
         pista.pitch = pitch;
 
+        if (pretempo > 60 / PPM && pretempo < (60 / PPM) + Time.deltaTime)
+        {
+            Intime = true;
+            print("Inicio");
+        }
+
         if (tempo > 60 / PPM)
         {
             tempo = 0;
+            pretempo = tempo + (margen / PPM);
             print("pa");
+        }        
+
+        if (postempo > 60 / PPM)
+        {
+            Intime = false;
+            print("Final");
+            postempo = tempo - (margen / PPM);
         }
     }
 }
