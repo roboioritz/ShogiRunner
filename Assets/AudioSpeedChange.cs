@@ -4,21 +4,38 @@ using UnityEngine;
 
 public class AudioSpeedChange : MonoBehaviour
 {
+    public AudioSpeedChange i;
     private AudioSource pista;
     public float points;
     public float acceleration;
+    public float pitch;
+    public float PPM;
+    public float PPMbase;
+
+    private float tempo;
 
     void Start()
     {
+        i = this;
         pista = GetComponent<AudioSource>();
         pista.Play(0);
         points = 1;
+        acceleration = 2f / 3000f;
     }
-    
+
     void Update()
     {
-        //Debug.Log("pich: " + pista.pitch);
-        points += acceleration * Time.deltaTime;
-        pista.pitch = points;
+        points += 1 * Time.deltaTime;
+        tempo += Time.deltaTime;
+
+        pitch = 1 + (points * acceleration);
+        PPM = pitch * PPMbase;
+        pista.pitch = pitch;
+
+        if (tempo > 60 / PPM)
+        {
+            tempo = 0;
+            print("pa");
+        }
     }
 }
