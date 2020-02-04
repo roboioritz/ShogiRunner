@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerControler : MonoBehaviour
 {
     public PlayerControler i;
@@ -21,11 +22,7 @@ public class PlayerControler : MonoBehaviour
     {
         InTime = AudioSpeedChange.i.Intime;
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(0.35f * casilla, transform.position.y, transform.position.z), 0.2f);
-    }
-
-    
-    
+        transform.position = Vector3.Lerp(transform.position, new Vector3(0.35f * casilla, transform.position.y, transform.position.z), 0.2f);}        
 
     //King    
     public void KingUp()
@@ -34,6 +31,7 @@ public class PlayerControler : MonoBehaviour
         {
             print("KingUp");
             ScenaryControler.i.Rotar(1);
+            GameplayManager.i.PointsUp(1);
         }
         else KingFail();
     }
@@ -43,8 +41,14 @@ public class PlayerControler : MonoBehaviour
         if (InTime)
         {
             print("UpLeft");
-            ScenaryControler.i.Rotar(1);
-            casilla -= 1;
+            ScenaryControler.i.Rotar(1);            
+            
+            if (casilla > -3)
+            {
+                casilla -= 1;
+                GameplayManager.i.PointsUp(1);
+            }
+            else KingFail();
         }
 
         else KingFail();
@@ -56,7 +60,12 @@ public class PlayerControler : MonoBehaviour
         {
             print("KingUpRight");
             ScenaryControler.i.Rotar(1);
-            casilla += 1;
+            if (casilla < 3)
+            {
+                casilla += 1;
+                GameplayManager.i.PointsUp(1);
+            }
+            else KingFail();
         }
         else KingFail();
     }
@@ -66,7 +75,11 @@ public class PlayerControler : MonoBehaviour
         if (InTime)
         {
             print("KingLeft");
-            casilla -= 1;
+            if (casilla > -3)
+            {
+                casilla -= 1;                
+            }
+            else KingFail();
         }
         else KingFail();
     }
@@ -76,7 +89,12 @@ public class PlayerControler : MonoBehaviour
         if (InTime)
         {
             print("KingRight");
-            casilla += 1;
+            if (casilla < 3)
+            {
+                casilla += 1;
+                
+            }
+            else KingFail();
         }
         else KingFail();
     }
@@ -85,42 +103,93 @@ public class PlayerControler : MonoBehaviour
     {        
         print("KingFail");
         ScenaryControler.i.Rotar(1);
+        GameplayManager.i.TempoFail();
     }
 
     //Silver
     public void SilverUp()
     {
-
+        if (InTime)
+        {
+            ScenaryControler.i.Rotar(1);
+            GameplayManager.i.PointsUp(1);
+        }
+        else SilverFail();
     }
 
     public void SilverUpLeft()
     {
-
+        if (InTime)
+        {
+            ScenaryControler.i.Rotar(1);
+            if (casilla > -3)
+            {
+                casilla -= 1;
+                GameplayManager.i.PointsUp(1);
+            }
+            else SilverFail();
+        }
+        else SilverFail();
     }
 
     public void SilverUpRight()
     {
-
+        if (InTime)
+        {
+            ScenaryControler.i.Rotar(1);
+            if (casilla < 3)
+            {
+                casilla += 1;
+                GameplayManager.i.PointsUp(1);
+            }
+            else SilverFail();
+        }
+        else SilverFail();
     }
 
     public void SilverFail()
     {
-
+        ScenaryControler.i.Rotar(1);
+        GameplayManager.i.TempoFail();
     }
 
     //Knight
     public void KnightgLeft()
     {
-
+        if (InTime)
+        {
+            ScenaryControler.i.Rotar(2);
+            if (casilla > -3)
+            {
+                casilla -= 1;
+                GameplayManager.i.PointsUp(2);
+            }
+            else KnightFail();
+        }
+        else KnightFail();
     }
 
     public void KnightRight()
     {
-
+        if (InTime)
+        {
+            ScenaryControler.i.Rotar(2);
+            if (casilla < 3)
+            {
+                casilla += 1;
+                GameplayManager.i.PointsUp(2);
+            }
+            else KnightFail();
+        }
+        else KnightFail();
     }
 
     public void KnightFail()
     {
-
+        int r = Random.Range(-1,1);
+        if (r == 0) r = 1;
+        casilla += r;
+        ScenaryControler.i.Rotar(2);
+        GameplayManager.i.TempoFail();
     }
 }

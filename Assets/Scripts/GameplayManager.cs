@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -10,10 +11,21 @@ public class GameplayManager : MonoBehaviour
     public int multipler;
     public int chain;
 
+    public GameObject KingButtons;
+    public GameObject SilverButtons;
+    public GameObject KnightButtons;
+    public GameObject KingObject;
+    public GameObject SilverObject;
+    public GameObject KnightObject;
+
+    public Text canvasPoints;
+    public Text canvasMultipler;
+
     void Start()
     {
         i = this;
         multipler = 1;
+        points = 0;
     }
     
     void Update()
@@ -23,6 +35,10 @@ public class GameplayManager : MonoBehaviour
             if(multipler<5)multipler++;
             chain = 0;
         }
+
+        canvasMultipler.text = "X " + multipler;
+        canvasPoints.text = "" + points + " PTS";
+
     }
 
     public void PointsUp (int p)

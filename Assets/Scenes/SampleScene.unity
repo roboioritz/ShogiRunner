@@ -5664,7 +5664,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 151307825}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308936947}
+        m_MethodName: KnightRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &151307825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8051,6 +8062,14 @@ MonoBehaviour:
   points: 0
   multipler: 0
   chain: 0
+  KingButtons: {fileID: 217963838}
+  SilverButtons: {fileID: 614952208}
+  KnightButtons: {fileID: 1755769215}
+  KingObject: {fileID: 1459356674}
+  SilverObject: {fileID: 1667205729}
+  KnightObject: {fileID: 232157828}
+  canvasPoints: {fileID: 1667409844}
+  canvasMultipler: {fileID: 933522520}
 --- !u!4 &210679414
 Transform:
   m_ObjectHideFlags: 0
@@ -8063,7 +8082,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &212795241
 GameObject:
@@ -15797,7 +15816,7 @@ RectTransform:
   - {fileID: 933522519}
   - {fileID: 1667409843}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -29446,7 +29465,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 805985071}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308936947}
+        m_MethodName: KnightgLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &805985071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34678,7 +34708,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 96a7e087cd52a5043b6af52c1d202b3c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 36e52d4aa9f998742b83eb97a4757215, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -44047,7 +44077,7 @@ Transform:
   - {fileID: 2017032016}
   - {fileID: 705507995}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1171361294
 GameObject:
@@ -46262,7 +46292,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1221770574}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308936947}
+        m_MethodName: SilverUpLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1221770574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50289,7 +50330,7 @@ Transform:
   - {fileID: 1667205730}
   - {fileID: 232157829}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -7.339, y: 0, z: 90.00001}
 --- !u!114 &1308936947
 MonoBehaviour:
@@ -71587,7 +71628,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1830043974}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308936947}
+        m_MethodName: SilverUpRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1830043974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75044,7 +75096,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50.000004, y: 72.115005, z: 0}
 --- !u!1 &1942833618
 GameObject:
@@ -77457,7 +77509,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2010982732}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1308936947}
+        m_MethodName: SilverUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2010982732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82239,7 +82302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2145780697
 GameObject:

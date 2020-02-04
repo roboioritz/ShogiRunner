@@ -37,7 +37,7 @@ public class AudioSpeedChange : MonoBehaviour
 
     void Update()
     {
-        points += 1 * Time.deltaTime;
+        points = GameplayManager.i.points;
         tempo += Time.deltaTime;
         pretempo += Time.deltaTime;
         postempo += Time.deltaTime;
