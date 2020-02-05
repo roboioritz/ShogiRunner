@@ -49,22 +49,23 @@ public class AudioSpeedChange : MonoBehaviour
         if (pretempo > 60 / PPM && pretempo < (60 / PPM) + Time.deltaTime)
         {
             Intime = true;
-            print("Inicio");
+            //print("Inicio");
         }
 
         if (tempo > 60 / PPM)
         {
             tempo = 0;
             pretempo = tempo + (margen / PPM);
-            print("pa");
-            GameplayManager.i.SpawnEnemy();
+            //print("pa");
+            
         }        
 
         if (postempo > 60 / PPM)
         {
             Intime = false;
-            print("Final");
+            //print("Final");
             postempo = tempo - (margen / PPM);
+            GameplayManager.i.SpawnEnemy();
         }
     }
 }

@@ -15,7 +15,7 @@ public class CameraControler : MonoBehaviour
     void Update()
     {
         casilla = PlayerControler.i.casilla;
-        transform.position = Vector3.Lerp(transform.position, new Vector3(0.175f * casilla, transform.position.y, transform.position.z), 0.2f);
+        transform.position = Vector3.Lerp(transform.position, new Vector3((0.175f * casilla) - 0.1074026f, transform.position.y, transform.position.z), 0.2f);
     }
 }
 

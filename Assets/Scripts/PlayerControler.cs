@@ -8,6 +8,7 @@ public class PlayerControler : MonoBehaviour
     public static PlayerControler i;
     public GameObject Audio;
     public GameObject Escenario;
+    public Vector2Int TablePos;
 
     public bool InTime;
 
@@ -16,12 +17,15 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         i = this;
+        TablePos = new Vector2Int(0, 0); //( Horizontal , Vertical/Rotacion )
     }
 
     void Update()
     {
         InTime = AudioSpeedChange.i.Intime;
         transform.position = Vector3.Lerp(transform.position, new Vector3(0.35f * casilla, transform.position.y, transform.position.z), 0.2f);
+        TablePos.x = casilla;
+        if (TablePos.y >= 60) TablePos.y -= 60;
     }        
 
     //King    
@@ -29,7 +33,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (InTime)
         {
-            print("KingUp");
+            //print("KingUp");
             ScenaryControler.i.Rotar(1);
             GameplayManager.i.PointsUp(1);
         }
@@ -40,7 +44,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (InTime)
         {
-            print("UpLeft");
+            //print("UpLeft");
             ScenaryControler.i.Rotar(1);            
             
             if (casilla > -3)
@@ -58,7 +62,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (InTime)
         {
-            print("KingUpRight");
+            //print("KingUpRight");
             ScenaryControler.i.Rotar(1);
             if (casilla < 3)
             {
@@ -74,7 +78,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (InTime)
         {
-            print("KingLeft");
+            //print("KingLeft");
             if (casilla > -3)
             {
                 casilla -= 1;                
@@ -88,7 +92,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (InTime)
         {
-            print("KingRight");
+            //print("KingRight");
             if (casilla < 3)
             {
                 casilla += 1;
@@ -101,7 +105,7 @@ public class PlayerControler : MonoBehaviour
 
     public void KingFail()
     {        
-        print("KingFail");
+        //print("KingFail");
         ScenaryControler.i.Rotar(1);
         GameplayManager.i.TempoFail();
     }
