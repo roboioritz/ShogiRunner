@@ -10,6 +10,8 @@ public class GameplayManager : MonoBehaviour
     public int points;
     public int multipler;
     public int chain;
+    public int nivel;
+    public bool DoSpawn;
 
     public GameObject KingButtons;
     public GameObject SilverButtons;
@@ -52,6 +54,8 @@ public class GameplayManager : MonoBehaviour
         }
         canvasMultipler.text = "X " + multipler;
         canvasPoints.text = "" + points + " PTS";
+
+        if (DoSpawn && ScenaryControler.i.spawneable) SpawnEnemy();
     }
 
     public void PointsUp (int p)
@@ -68,16 +72,11 @@ public class GameplayManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        //Instantiate(enemy, new Vector3(PlayerControler.i.TablePos.x * 0.35f, 0, 0), Quaternion.Euler((PlayerControler.i.TablePos.y * 3) + 180, 0,90), ScenaryControler.i.transform);
-        e=Instantiate(enemy, new Vector3(0,0,0), Quaternion.Euler(0, 0, 90), ScenaryControler.i.transform);
-        e.GetComponent<Enemy>().TablePos = new Vector2Int(PlayerControler.i.TablePos.x, PlayerControler.i.TablePos.y + 30);
-        print("tablepos="+((PlayerControler.i.TablePos.y * -6) +360));
-        print("scenary=" + ScenaryControler.i.transform.rotation.eulerAngles.x);
-        print("resta = " + (((PlayerControler.i.TablePos.y * -6) + 360) - ScenaryControler.i.transform.rotation.eulerAngles.x));
-        print("suma = " + (((PlayerControler.i.TablePos.y * -6) + 360) + ScenaryControler.i.transform.rotation.eulerAngles.x));
-        print("resta resta = " + (-((PlayerControler.i.TablePos.y * -6) + 360) - ScenaryControler.i.transform.rotation.eulerAngles.x));
-        print("resta suma = " + (-((PlayerControler.i.TablePos.y * -6) + 360) + ScenaryControler.i.transform.rotation.eulerAngles.x));
-        //Enemies.Add(e.GetComponent<Enemy>());
+        int r = Random.Range(3,-3);
+        e=Instantiate(enemy, new Vector3(0.35f * r,0,0), Quaternion.Euler(0, 0, 90), ScenaryControler.i.transform);
+        e.GetComponent<Enemy>().TablePos = new Vector2Int(r, PlayerControler.i.TablePos.y + 30);
+        Enemies.Add(e.GetComponent<Enemy>());
+        DoSpawn = false;
     }
 
 }

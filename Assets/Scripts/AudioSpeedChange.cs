@@ -20,6 +20,7 @@ public class AudioSpeedChange : MonoBehaviour
     private float tempo;
     private float pretempo;
     private float postempo;
+    private int counter;
 
 
     void Start()
@@ -55,6 +56,12 @@ public class AudioSpeedChange : MonoBehaviour
         if (tempo > 60 / PPM)
         {
             tempo = 0;
+            counter++;
+            if (counter == GameplayManager.i.nivel)
+            {
+                counter = 0;
+                GameplayManager.i.DoSpawn = true;
+            }
             pretempo = tempo + (margen / PPM);
             //print("pa");
             
@@ -65,7 +72,7 @@ public class AudioSpeedChange : MonoBehaviour
             Intime = false;
             //print("Final");
             postempo = tempo - (margen / PPM);
-            GameplayManager.i.SpawnEnemy();
+            
         }
     }
 }

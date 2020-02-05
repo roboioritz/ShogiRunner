@@ -9,6 +9,8 @@ public class ScenaryControler : MonoBehaviour
     public float alpha;
     public float a,b;
 
+    public bool spawneable;
+
     void Start()
     {
         i = this;
@@ -22,6 +24,11 @@ public class ScenaryControler : MonoBehaviour
         b = Mathf.Sin(alpha / 2 * Mathf.Deg2Rad);
         //transform.rotation = Quaternion.Lerp(transform.rotation, new Quaternion(-b , 0, 0, a), 0.2f);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(-alpha,0,0), 0.2f);
+        if (transform.rotation.eulerAngles.x == 360 -alpha) spawneable = true;
+        else spawneable = false;
+        //print("angulo:" + transform.rotation.eulerAngles.x);
+        //print("alpha:" + alpha);
+        //print(spawneable);
         //transform.rotation = Quaternion.Euler(-alpha, 0, 0);
     }
 

@@ -8062,6 +8062,8 @@ MonoBehaviour:
   points: 0
   multipler: 0
   chain: 0
+  nivel: 3
+  DoSpawn: 0
   KingButtons: {fileID: 217963838}
   SilverButtons: {fileID: 614952208}
   KnightButtons: {fileID: 1755769215}
@@ -44172,6 +44174,7 @@ MonoBehaviour:
   alpha: 0
   a: 0
   b: 0
+  spawneable: 0
 --- !u!4 &1169400996
 Transform:
   m_ObjectHideFlags: 0
