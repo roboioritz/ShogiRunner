@@ -72,7 +72,9 @@ public class AudioSpeedChange : MonoBehaviour
             Intime = false;
             //print("Final");
             postempo = tempo - (margen / PPM);
-            
+            GameplayManager.i.TempoFail();
+            PlayerControler.i.DoMove = true;
+
         }
     }
 }

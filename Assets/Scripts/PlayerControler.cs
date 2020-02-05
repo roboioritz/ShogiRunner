@@ -11,12 +11,14 @@ public class PlayerControler : MonoBehaviour
     public Vector2Int TablePos;
 
     public bool InTime;
+    public bool DoMove;
 
     public int casilla;
 
     void Start()
     {
         i = this;
+        DoMove = true;
         TablePos = new Vector2Int(0, 0); //( Horizontal , Vertical/Rotacion )
     }
 
@@ -31,24 +33,26 @@ public class PlayerControler : MonoBehaviour
     //King    
     public void KingUp()
     {
-        if (InTime)
+        if (InTime&&DoMove)
         {
             //print("KingUp");
             ScenaryControler.i.Rotar(1);
             GameplayManager.i.PointsUp(1);
+            DoMove = false;
         }
         else KingFail();
     }
 
     public void KingUpLeft()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
             //print("UpLeft");
-            ScenaryControler.i.Rotar(1);            
             
+            DoMove = false;
             if (casilla > -3)
             {
+                ScenaryControler.i.Rotar(1);
                 casilla -= 1;
                 GameplayManager.i.PointsUp(1);
             }
@@ -60,12 +64,14 @@ public class PlayerControler : MonoBehaviour
 
     public void KingUpRight()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
             //print("KingUpRight");
-            ScenaryControler.i.Rotar(1);
+            
+            DoMove = false;
             if (casilla < 3)
             {
+                ScenaryControler.i.Rotar(1);
                 casilla += 1;
                 GameplayManager.i.PointsUp(1);
             }
@@ -76,9 +82,10 @@ public class PlayerControler : MonoBehaviour
 
     public void KingLeft()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
             //print("KingLeft");
+            DoMove = false;
             if (casilla > -3)
             {
                 casilla -= 1;                
@@ -90,9 +97,10 @@ public class PlayerControler : MonoBehaviour
 
     public void KingRight()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
             //print("KingRight");
+            DoMove = false;
             if (casilla < 3)
             {
                 casilla += 1;
@@ -106,28 +114,31 @@ public class PlayerControler : MonoBehaviour
     public void KingFail()
     {        
         //print("KingFail");
-        ScenaryControler.i.Rotar(1);
+        //ScenaryControler.i.Rotar(1);
         GameplayManager.i.TempoFail();
     }
 
     //Silver
     public void SilverUp()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
             ScenaryControler.i.Rotar(1);
             GameplayManager.i.PointsUp(1);
+            DoMove = false;
         }
         else SilverFail();
     }
 
     public void SilverUpLeft()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
-            ScenaryControler.i.Rotar(1);
+            
+            DoMove = false;
             if (casilla > -3)
             {
+                ScenaryControler.i.Rotar(1);
                 casilla -= 1;
                 GameplayManager.i.PointsUp(1);
             }
@@ -138,11 +149,13 @@ public class PlayerControler : MonoBehaviour
 
     public void SilverUpRight()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
-            ScenaryControler.i.Rotar(1);
+            
+            DoMove = false;
             if (casilla < 3)
             {
+                ScenaryControler.i.Rotar(1);
                 casilla += 1;
                 GameplayManager.i.PointsUp(1);
             }
@@ -153,18 +166,20 @@ public class PlayerControler : MonoBehaviour
 
     public void SilverFail()
     {
-        ScenaryControler.i.Rotar(1);
+        //ScenaryControler.i.Rotar(1);
         GameplayManager.i.TempoFail();
     }
 
     //Knight
     public void KnightgLeft()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
-            ScenaryControler.i.Rotar(2);
+            
+            DoMove = false;
             if (casilla > -3)
             {
+                ScenaryControler.i.Rotar(2);
                 casilla -= 1;
                 GameplayManager.i.PointsUp(2);
             }
@@ -175,11 +190,13 @@ public class PlayerControler : MonoBehaviour
 
     public void KnightRight()
     {
-        if (InTime)
+        if (InTime && DoMove)
         {
-            ScenaryControler.i.Rotar(2);
+            
+            DoMove = false;
             if (casilla < 3)
             {
+                ScenaryControler.i.Rotar(2);
                 casilla += 1;
                 GameplayManager.i.PointsUp(2);
             }
@@ -191,9 +208,9 @@ public class PlayerControler : MonoBehaviour
     public void KnightFail()
     {
         int r = Random.Range(-1,1);
-        if (r == 0) r = 1;
-        casilla += r;
-        ScenaryControler.i.Rotar(2);
+        //if (r == 0) r = 1;
+        //casilla += r;
+        //ScenaryControler.i.Rotar(2);
         GameplayManager.i.TempoFail();
     }
 }
