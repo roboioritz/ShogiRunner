@@ -14,9 +14,14 @@ public class GameplayManager : MonoBehaviour
     public GameObject KingButtons;
     public GameObject SilverButtons;
     public GameObject KnightButtons;
-    public GameObject KingObject;
-    public GameObject SilverObject;
-    public GameObject KnightObject;
+    public GameObject KingKanji;
+    public GameObject SilverKanji;
+    public GameObject KnightKanji;
+    public GameObject KingLetra;
+    public GameObject SilverLetra;
+    public GameObject KnightLetra;
+
+    public GameObject enemy;
 
     public Text canvasPoints;
     public Text canvasMultipler;
@@ -52,4 +57,10 @@ public class GameplayManager : MonoBehaviour
         chain = 0;
         multipler = 1;
     }
+
+    public void SpawnEnemy()
+    {
+        Instantiate(enemy,PlayerControler.i.transform.position, PlayerControler.i.transform.rotation,ScenaryControler.i.transform.parent);
+    }
+
 }

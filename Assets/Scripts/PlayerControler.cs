@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    public PlayerControler i;
+    public static PlayerControler i;
     public GameObject Audio;
     public GameObject Escenario;
 
@@ -21,8 +21,8 @@ public class PlayerControler : MonoBehaviour
     void Update()
     {
         InTime = AudioSpeedChange.i.Intime;
-
-        transform.position = Vector3.Lerp(transform.position, new Vector3(0.35f * casilla, transform.position.y, transform.position.z), 0.2f);}        
+        transform.position = Vector3.Lerp(transform.position, new Vector3(0.35f * casilla, transform.position.y, transform.position.z), 0.2f);
+    }        
 
     //King    
     public void KingUp()

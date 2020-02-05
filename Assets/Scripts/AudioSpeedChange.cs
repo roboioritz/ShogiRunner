@@ -57,6 +57,7 @@ public class AudioSpeedChange : MonoBehaviour
             tempo = 0;
             pretempo = tempo + (margen / PPM);
             print("pa");
+            GameplayManager.i.SpawnEnemy();
         }        
 
         if (postempo > 60 / PPM)
