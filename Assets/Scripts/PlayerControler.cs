@@ -12,6 +12,7 @@ public class PlayerControler : MonoBehaviour
 
     public bool InTime;
     public bool DoMove;
+    public bool Dead;
 
     public int casilla;
 
@@ -33,7 +34,7 @@ public class PlayerControler : MonoBehaviour
     //King    
     public void KingUp()
     {
-        if (InTime&&DoMove)
+        if (InTime&&DoMove&&!Dead)
         {
             //print("KingUp");
             ScenaryControler.i.Rotar(1);
@@ -45,7 +46,7 @@ public class PlayerControler : MonoBehaviour
 
     public void KingUpLeft()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             //print("UpLeft");
             
@@ -64,7 +65,7 @@ public class PlayerControler : MonoBehaviour
 
     public void KingUpRight()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             //print("KingUpRight");
             
@@ -82,7 +83,7 @@ public class PlayerControler : MonoBehaviour
 
     public void KingLeft()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             //print("KingLeft");
             DoMove = false;
@@ -97,7 +98,7 @@ public class PlayerControler : MonoBehaviour
 
     public void KingRight()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             //print("KingRight");
             DoMove = false;
@@ -121,7 +122,7 @@ public class PlayerControler : MonoBehaviour
     //Silver
     public void SilverUp()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             ScenaryControler.i.Rotar(1);
             GameplayManager.i.PointsUp(1);
@@ -132,7 +133,7 @@ public class PlayerControler : MonoBehaviour
 
     public void SilverUpLeft()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             
             DoMove = false;
@@ -149,7 +150,7 @@ public class PlayerControler : MonoBehaviour
 
     public void SilverUpRight()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             
             DoMove = false;
@@ -173,7 +174,7 @@ public class PlayerControler : MonoBehaviour
     //Knight
     public void KnightgLeft()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             
             DoMove = false;
@@ -190,7 +191,7 @@ public class PlayerControler : MonoBehaviour
 
     public void KnightRight()
     {
-        if (InTime && DoMove)
+        if (InTime && DoMove&&!Dead)
         {
             
             DoMove = false;

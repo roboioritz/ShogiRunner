@@ -61,6 +61,8 @@ public class AudioSpeedChange : MonoBehaviour
             {
                 counter = 0;
                 GameplayManager.i.DoSpawn = true;
+                //print("a"+ScenaryControler.i.transform.rotation.eulerAngles.x);
+                //print("b"+(360 - ScenaryControler.i.alpha));
             }
             pretempo = tempo + (margen / PPM);
             //print("pa");
@@ -73,6 +75,10 @@ public class AudioSpeedChange : MonoBehaviour
             //print("Final");
             postempo = tempo - (margen / PPM);
             GameplayManager.i.TempoFail();
+            if (PlayerControler.i.DoMove == true)
+            {
+
+            }
             PlayerControler.i.DoMove = true;
 
         }

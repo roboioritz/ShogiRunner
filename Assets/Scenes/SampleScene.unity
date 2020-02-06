@@ -8073,7 +8073,44 @@ MonoBehaviour:
   KingLetra: {fileID: 1892803047}
   SilverLetra: {fileID: 1594303895}
   KnightLetra: {fileID: 1057849265}
-  enemy: {fileID: 4728863768776165111, guid: 8b7227dd32a159b40945dcaa821a0cf6, type: 3}
+  Types:
+  - {fileID: 4728863768776165111, guid: 3f7ebe0f6604fa14ea432e43321e32d7, type: 3}
+  - {fileID: 4728863768776165111, guid: 3f7ebe0f6604fa14ea432e43321e32d7, type: 3}
+  - {fileID: 4728863768776165111, guid: 3f7ebe0f6604fa14ea432e43321e32d7, type: 3}
+  - {fileID: 4728863768776165111, guid: 3f7ebe0f6604fa14ea432e43321e32d7, type: 3}
+  - {fileID: 4728863768776165111, guid: 7a46a8244157f8649bf90a8dc23cbffb, type: 3}
+  - {fileID: 4728863768776165111, guid: 7a46a8244157f8649bf90a8dc23cbffb, type: 3}
+  - {fileID: 4728863768776165111, guid: 7a46a8244157f8649bf90a8dc23cbffb, type: 3}
+  - {fileID: 4728863768776165111, guid: 7a46a8244157f8649bf90a8dc23cbffb, type: 3}
+  - {fileID: 4728863768776165111, guid: 1dd2bd9ada460aa4facc54b78705f947, type: 3}
+  - {fileID: 4728863768776165111, guid: 1dd2bd9ada460aa4facc54b78705f947, type: 3}
+  - {fileID: 4728863768776165111, guid: 2a9f2c89abe75534280a7887474941e7, type: 3}
+  - {fileID: 4728863768776165111, guid: 2a9f2c89abe75534280a7887474941e7, type: 3}
+  - {fileID: 4728863768776165111, guid: 2a9f2c89abe75534280a7887474941e7, type: 3}
+  - {fileID: 4728863768776165111, guid: 2a9f2c89abe75534280a7887474941e7, type: 3}
+  - {fileID: 4728863768776165111, guid: 2a9f2c89abe75534280a7887474941e7, type: 3}
+  - {fileID: 4728863768776165111, guid: 2a9f2c89abe75534280a7887474941e7, type: 3}
+  - {fileID: 4728863768776165111, guid: 2a9f2c89abe75534280a7887474941e7, type: 3}
+  - {fileID: 4728863768776165111, guid: f3d35354d7285b94ea24bd2c5bad9c5f, type: 3}
+  - {fileID: 4728863768776165111, guid: f3d35354d7285b94ea24bd2c5bad9c5f, type: 3}
+  - {fileID: 4728863768776165111, guid: f3d35354d7285b94ea24bd2c5bad9c5f, type: 3}
+  - {fileID: 4728863768776165111, guid: f3d35354d7285b94ea24bd2c5bad9c5f, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: ad81c7f38c2553e42b6c1d05ecd1569c, type: 3}
+  - {fileID: 4728863768776165111, guid: 7d59007a975346c448de63e9ee9b273f, type: 3}
+  - {fileID: 4728863768776165111, guid: 7d59007a975346c448de63e9ee9b273f, type: 3}
+  - {fileID: 4728863768776165111, guid: 7d59007a975346c448de63e9ee9b273f, type: 3}
+  - {fileID: 4728863768776165111, guid: 7d59007a975346c448de63e9ee9b273f, type: 3}
+  - {fileID: 4728863768776165111, guid: 7d59007a975346c448de63e9ee9b273f, type: 3}
+  - {fileID: 4728863768776165111, guid: e62f671cad5a0344bbe43280503fe393, type: 3}
+  - {fileID: 4728863768776165111, guid: e62f671cad5a0344bbe43280503fe393, type: 3}
   Enemies: []
   canvasPoints: {fileID: 1667409844}
   canvasMultipler: {fileID: 933522520}
@@ -8513,7 +8550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &217963839
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26119,7 +26156,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.148e-42, y: 1.02e-43, z: 4.5905e-41, w: 0}
+  m_BoundingSphereOverride: {x: 2.747e-42, y: 0, z: 1.63e-43, w: 0.5}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -34715,7 +34752,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 36e52d4aa9f998742b83eb97a4757215, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 96a7e087cd52a5043b6af52c1d202b3c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -50464,6 +50501,7 @@ MonoBehaviour:
   Escenario: {fileID: 0}
   TablePos: {x: 0, y: 0}
   InTime: 0
+  DoMove: 0
   casilla: 0
 --- !u!1 &1309591051
 GameObject:
@@ -67733,7 +67771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1755769216
 RectTransform:
   m_ObjectHideFlags: 0
